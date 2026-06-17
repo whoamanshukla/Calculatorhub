@@ -1,17 +1,115 @@
-<html>
-    <head>
-        <title> Calculatorhub </title>
-        < body bgcolor="lightblue"> </body>
-        <h1> Age calculator </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Age Calculator</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
 
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#667eea,#764ba2,#ff6a00);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
 
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
+.container{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding:30px;
+    border-radius:15px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+    color:white;
+}
 
+h1{
+    margin-bottom:20px;
+}
 
+input{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:15px;
+    outline:none;
+}
 
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#00c6ff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-    </head>
+button:hover{
+    background:#0072ff;
+}
+
+.result{
+    margin-top:15px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Age Calculator</h1>
+
+    <input type="date" id="dob">
+    <button onclick="calculateAge()">Calculate Age</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+function calculateAge(){
+    let dob = document.getElementById("dob").value;
+
+    if(!dob){
+        document.getElementById("result").innerText = "Please select your birth date";
+        return;
+    }
+
+    let birthDate = new Date(dob);
+    let today = new Date();
+
+    let ageYears = today.getFullYear() - birthDate.getFullYear();
+
+    let diffTime = today - birthDate;
+    let ageDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    document.getElementById("result").innerHTML =
+        "Age: <b>" + ageYears + " Years</b><br>Total Days: <b>" + ageDays + "</b>";
+}
+</script>
+
+</body>
 </html>
 
 
