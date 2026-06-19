@@ -1,110 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Age Calculator Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Age Calculator</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
       font-family: Arial, sans-serif;
     }
 
-    body {
-      background: #f4f6f9;
-      color: #333;
+    body{
+      background: linear-gradient(135deg,#0f172a,#1e293b);
+      color:white;
     }
 
     /* Navbar */
-    header {
-      background: #1e2a38;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    nav{
+      width:100%;
+      background:#111827;
+      padding:15px 50px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
     }
 
-    header h1 {
-      color: white;
-      font-size: 22px;
+    nav h1{
+      color:#38bdf8;
+      font-size:28px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 16px;
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
     }
 
-    nav a:hover {
-      color: #00c2ff;
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-size:18px;
+      transition:0.3s;
     }
 
-    /* Sections */
-    section {
-      padding: 60px 40px;
+    nav ul li a:hover{
+      color:#38bdf8;
     }
 
-    .hero {
-      text-align: center;
-      background: linear-gradient(to right, #00c2ff, #3a7bd5);
-      color: white;
-      padding: 80px 20px;
+    /* Hero Section */
+    .hero{
+      min-height:90vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
     }
 
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    .calculator{
+      background:white;
+      color:black;
+      padding:40px;
+      width:400px;
+      border-radius:20px;
+      box-shadow:0 0 20px rgba(0,0,0,0.5);
+      text-align:center;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    .calculator h2{
+      margin-bottom:20px;
+      color:#0f172a;
+      font-size:32px;
     }
 
-    input, button {
-      padding: 12px;
-      width: 100%;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+    input{
+      width:100%;
+      padding:12px;
+      font-size:18px;
+      border-radius:10px;
+      border:2px solid #ccc;
+      margin-bottom:20px;
     }
 
-    button {
-      background: #1e2a38;
-      color: white;
-      cursor: pointer;
+    button{
+      width:100%;
+      padding:12px;
+      background:#0ea5e9;
+      border:none;
+      color:white;
+      font-size:18px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
     }
 
-    button:hover {
-      background: #00c2ff;
+    button:hover{
+      background:#0284c7;
     }
 
-    /* About & Contact */
-    .box {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      margin-top: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    .result{
+      margin-top:25px;
+      background:#f1f5f9;
+      padding:20px;
+      border-radius:15px;
+      color:#111827;
+      font-size:20px;
+      line-height:1.8;
+      font-weight:bold;
     }
 
-    footer {
-      text-align: center;
-      background: #1e2a38;
-      color: white;
-      padding: 15px;
-      margin-top: 40px;
+    /* About Section */
+    .about, .contact{
+      padding:60px 50px;
+      text-align:center;
+    }
+
+    .about h2,
+    .contact h2{
+      font-size:36px;
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
+
+    .about p,
+    .contact p{
+      max-width:800px;
+      margin:auto;
+      font-size:18px;
+      line-height:1.8;
+      color:#e2e8f0;
+    }
+
+    footer{
+      background:#111827;
+      text-align:center;
+      padding:20px;
+      margin-top:30px;
+    }
+
+    @media(max-width:500px){
+      .calculator{
+        width:100%;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
     }
   </style>
 </head>
+<body>
 
+  <!-- Navbar -->
+  <nav>
+    <h1>Age Calculator</h1>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+
+    <div class="calculator">
+      <h2>Age Calculator</h2>
+
+      <input type="date" id="dob">
+
+      <button onclick="calculateAge()">
+        Calculate Age
+      </button>
+
+      <div class="result" id="result">
+        Enter your Date of Birth
+      </div>
+    </div>
+
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About</h2>
+
+    <p>
+      This professional Age Calculator website helps users calculate their exact age in Years, Months, and Days instantly. 
+      Simply enter your Date of Birth and get accurate results in one click.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+
+    <p>
+      Email: support@agecalculator.com <br><br>
+      Phone: +91 9876543210
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Age Calculator | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function calculateAge() {
+
+      let dob = document.getElementById("dob").value;
+
+      if(dob === ""){
+        alert("Please select your Date of Birth");
+        return;
+      }
+
+      let birthDate = new Date(dob);
+      let today = new Date();
+
+      let years = today.getFullYear() - birthDate.getFullYear();
+      let months = today.getMonth() - birthDate.getMonth();
+      let days = today.getDate() - birthDate.getDate();
+
+      if(days < 0){
+        months--;
+        let prevMonth = new Date(
+          today.getFullYear(),
+          today.getMonth(),
+          0
+        ).getDate();
+
+        days += prevMonth;
+      }
+
+      if(months < 0){
+        years--;
+        months += 12;
+      }
+
+      document.getElementById("result").innerHTML =
+        `
+        🎂 Years: ${years} <br>
+        📅 Months: ${months} <br>
+        🗓 Days: ${days}
+        `;
+    }
+  </script>
+
+</body>
+</html>
