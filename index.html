@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Age Calculator</title>
+  <title>CalculatorHub - Free Online Calculators</title>
+  <meta name="description" content="CalculatorHub offers free online calculators including Age Calculator, Percentage Calculator, EMI Calculator, GST Calculator, SIP Calculator, Discount Calculator, BMI Calculator, Loan Calculator, FD Calculator, Simple Interest, Compound Interest, Date Difference, Time Calculator, Salary Hike and Profit Margin Calculator." />
+  <meta name="google-site-verification" content="326574f3ca36cb86" />
 
   <style>
     *{
@@ -22,16 +20,18 @@
       color:white;
     }
 
-    /* Navbar */
     nav{
       width:100%;
       background:#111827;
-      padding:15px 50px;
+      padding:15px 30px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       position:sticky;
       top:0;
+      z-index:1000;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
     nav h1{
@@ -42,13 +42,14 @@
     nav ul{
       display:flex;
       list-style:none;
-      gap:25px;
+      gap:18px;
+      flex-wrap:wrap;
     }
 
     nav ul li a{
       text-decoration:none;
       color:white;
-      font-size:18px;
+      font-size:16px;
       transition:0.3s;
     }
 
@@ -56,38 +57,58 @@
       color:#38bdf8;
     }
 
-    /* Hero Section */
     .hero{
-      min-height:90vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      padding:60px 20px 30px;
+      text-align:center;
+    }
+
+    .hero h2{
+      font-size:42px;
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      max-width:850px;
+      margin:auto;
+      font-size:18px;
+      line-height:1.8;
+      color:#e2e8f0;
+    }
+
+    .cards{
+      width:95%;
+      max-width:1400px;
+      margin:30px auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:25px;
       padding:20px;
     }
 
     .calculator{
       background:white;
       color:black;
-      padding:40px;
-      width:400px;
+      padding:30px;
       border-radius:20px;
-      box-shadow:0 0 20px rgba(0,0,0,0.5);
+      box-shadow:0 0 20px rgba(0,0,0,0.35);
       text-align:center;
     }
 
     .calculator h2{
       margin-bottom:20px;
       color:#0f172a;
-      font-size:32px;
+      font-size:28px;
     }
 
     input{
       width:100%;
       padding:12px;
-      font-size:18px;
+      font-size:17px;
       border-radius:10px;
       border:2px solid #ccc;
-      margin-bottom:20px;
+      margin-bottom:15px;
+      outline:none;
     }
 
     button{
@@ -100,6 +121,7 @@
       border-radius:10px;
       cursor:pointer;
       transition:0.3s;
+      margin-top:5px;
     }
 
     button:hover{
@@ -107,19 +129,19 @@
     }
 
     .result{
-      margin-top:25px;
+      margin-top:20px;
       background:#f1f5f9;
-      padding:20px;
+      padding:18px;
       border-radius:15px;
       color:#111827;
-      font-size:20px;
+      font-size:18px;
       line-height:1.8;
       font-weight:bold;
+      min-height:70px;
     }
 
-    /* About Section */
     .about, .contact{
-      padding:60px 50px;
+      padding:60px 20px;
       text-align:center;
     }
 
@@ -132,7 +154,7 @@
 
     .about p,
     .contact p{
-      max-width:800px;
+      max-width:900px;
       margin:auto;
       font-size:18px;
       line-height:1.8;
@@ -146,79 +168,213 @@
       margin-top:30px;
     }
 
-    @media(max-width:500px){
-      .calculator{
-        width:100%;
-      }
-
+    @media(max-width:700px){
       nav{
         flex-direction:column;
-        gap:10px;
+        align-items:flex-start;
+      }
+      nav ul{
+        gap:12px;
+      }
+      .hero h2{
+        font-size:30px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav>
-    <h1>Age Calculator</h1>
-
+    <h1>CalculatorHub</h1>
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="#age">Age</a></li>
+      <li><a href="#percentage">Percentage</a></li>
+      <li><a href="#emi">EMI</a></li>
+      <li><a href="#gst">GST</a></li>
+      <li><a href="#sip">SIP</a></li>
+      <li><a href="#bmi">BMI</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
+    <h2>CalculatorHub</h2>
+    <p>
+      Free online calculators for daily use — Age Calculator, Percentage Calculator, EMI Calculator, GST Calculator, SIP Calculator, Discount Calculator, BMI Calculator, Loan Calculator, FD Calculator, Simple Interest Calculator, Compound Interest Calculator, Date Difference Calculator, Time Calculator, Salary Hike Calculator and Profit Margin Calculator.
+    </p>
+  </section>
 
-    <div class="calculator">
+  <section class="cards">
+
+    <!-- Age Calculator -->
+    <div class="calculator" id="age">
       <h2>Age Calculator</h2>
-
       <input type="date" id="dob">
+      <button onclick="calculateAge()">Calculate Age</button>
+      <div class="result" id="result">Enter your Date of Birth</div>
+    </div>
 
-      <button onclick="calculateAge()">
-        Calculate Age
-      </button>
+    <!-- Percentage Calculator -->
+    <div class="calculator" id="percentage">
+      <h2>Percentage Calculator</h2>
+      <input type="number" id="percentValue" placeholder="Enter obtained value">
+      <input type="number" id="percentTotal" placeholder="Enter total value">
+      <button onclick="calculatePercentage()">Calculate Percentage</button>
+      <div class="result" id="percentageResult">Enter values to calculate percentage</div>
+    </div>
 
-      <div class="result" id="result">
-        Enter your Date of Birth
-      </div>
+    <!-- EMI Calculator -->
+    <div class="calculator" id="emi">
+      <h2>EMI Calculator</h2>
+      <input type="number" id="loanAmount" placeholder="Loan Amount">
+      <input type="number" id="loanRate" placeholder="Interest Rate (%)">
+      <input type="number" id="loanTenure" placeholder="Tenure (Years)">
+      <button onclick="calculateEMI()">Calculate EMI</button>
+      <div class="result" id="emiResult">Enter loan details</div>
+    </div>
+
+    <!-- GST Calculator -->
+    <div class="calculator" id="gst">
+      <h2>GST Calculator</h2>
+      <input type="number" id="gstAmount" placeholder="Amount">
+      <input type="number" id="gstRate" placeholder="GST Rate (%)">
+      <button onclick="calculateGST()">Calculate GST</button>
+      <div class="result" id="gstResult">Enter amount and GST rate</div>
+    </div>
+
+    <!-- SIP Calculator -->
+    <div class="calculator" id="sip">
+      <h2>SIP Calculator</h2>
+      <input type="number" id="sipMonthly" placeholder="Monthly Investment">
+      <input type="number" id="sipRate" placeholder="Expected Return (%)">
+      <input type="number" id="sipYears" placeholder="Years">
+      <button onclick="calculateSIP()">Calculate SIP</button>
+      <div class="result" id="sipResult">Enter SIP details</div>
+    </div>
+
+    <!-- Discount Calculator -->
+    <div class="calculator" id="discount">
+      <h2>Discount Calculator</h2>
+      <input type="number" id="originalPrice" placeholder="Original Price">
+      <input type="number" id="discountPercent" placeholder="Discount (%)">
+      <button onclick="calculateDiscount()">Calculate Discount</button>
+      <div class="result" id="discountResult">Enter price and discount</div>
+    </div>
+
+    <!-- BMI Calculator -->
+    <div class="calculator" id="bmi">
+      <h2>BMI Calculator</h2>
+      <input type="number" id="weight" placeholder="Weight (kg)">
+      <input type="number" id="height" placeholder="Height (cm)">
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <div class="result" id="bmiResult">Enter height and weight</div>
+    </div>
+
+    <!-- Loan Calculator -->
+    <div class="calculator" id="loan">
+      <h2>Loan Calculator</h2>
+      <input type="number" id="loanCalcAmount" placeholder="Loan Amount">
+      <input type="number" id="loanCalcRate" placeholder="Interest Rate (%)">
+      <input type="number" id="loanCalcYears" placeholder="Loan Years">
+      <button onclick="calculateLoan()">Calculate Loan</button>
+      <div class="result" id="loanResult">Enter loan details</div>
+    </div>
+
+    <!-- FD Calculator -->
+    <div class="calculator" id="fd">
+      <h2>FD Calculator</h2>
+      <input type="number" id="fdAmount" placeholder="Deposit Amount">
+      <input type="number" id="fdRate" placeholder="Interest Rate (%)">
+      <input type="number" id="fdYears" placeholder="Years">
+      <button onclick="calculateFD()">Calculate FD</button>
+      <div class="result" id="fdResult">Enter FD details</div>
+    </div>
+
+    <!-- Simple Interest -->
+    <div class="calculator" id="simpleInterest">
+      <h2>Simple Interest Calculator</h2>
+      <input type="number" id="siPrincipal" placeholder="Principal">
+      <input type="number" id="siRate" placeholder="Rate (%)">
+      <input type="number" id="siTime" placeholder="Time (Years)">
+      <button onclick="calculateSI()">Calculate Simple Interest</button>
+      <div class="result" id="siResult">Enter values</div>
+    </div>
+
+    <!-- Compound Interest -->
+    <div class="calculator" id="compoundInterest">
+      <h2>Compound Interest Calculator</h2>
+      <input type="number" id="ciPrincipal" placeholder="Principal">
+      <input type="number" id="ciRate" placeholder="Rate (%)">
+      <input type="number" id="ciTime" placeholder="Time (Years)">
+      <button onclick="calculateCI()">Calculate Compound Interest</button>
+      <div class="result" id="ciResult">Enter values</div>
+    </div>
+
+    <!-- Date Difference -->
+    <div class="calculator" id="dateDiff">
+      <h2>Date Difference Calculator</h2>
+      <input type="date" id="startDate">
+      <input type="date" id="endDate">
+      <button onclick="calculateDateDiff()">Calculate Difference</button>
+      <div class="result" id="dateDiffResult">Select start and end date</div>
+    </div>
+
+    <!-- Time Calculator -->
+    <div class="calculator" id="timeCalc">
+      <h2>Time Calculator</h2>
+      <input type="number" id="timeHours" placeholder="Hours">
+      <input type="number" id="timeMinutes" placeholder="Minutes">
+      <button onclick="calculateTime()">Convert to Total Minutes</button>
+      <div class="result" id="timeResult">Enter hours and minutes</div>
+    </div>
+
+    <!-- Salary Hike -->
+    <div class="calculator" id="salary">
+      <h2>Salary Hike Calculator</h2>
+      <input type="number" id="currentSalary" placeholder="Current Salary">
+      <input type="number" id="hikePercent" placeholder="Hike (%)">
+      <button onclick="calculateSalaryHike()">Calculate New Salary</button>
+      <div class="result" id="salaryResult">Enter salary details</div>
+    </div>
+
+    <!-- Profit Margin -->
+    <div class="calculator" id="profit">
+      <h2>Profit Margin Calculator</h2>
+      <input type="number" id="costPrice" placeholder="Cost Price">
+      <input type="number" id="sellingPrice" placeholder="Selling Price">
+      <button onclick="calculateProfitMargin()">Calculate Profit Margin</button>
+      <div class="result" id="profitResult">Enter cost and selling price</div>
     </div>
 
   </section>
 
-  <!-- About -->
   <section class="about" id="about">
     <h2>About</h2>
-
     <p>
-      This professional Age Calculator website helps users calculate their exact age in Years, Months, and Days instantly. 
-      Simply enter your Date of Birth and get accurate results in one click.
+      CalculatorHub is a free online calculator website built to make everyday calculations simple and fast. 
+      From Age Calculator to EMI, GST, SIP, BMI, Interest and Profit Margin calculators — everything is available in one place with a clean and easy-to-use design.
     </p>
   </section>
 
-  <!-- Contact -->
   <section class="contact" id="contact">
     <h2>Contact</h2>
-
     <p>
-      Email: loveamanshukla@gmail.com <br><br>
+      Email: loveamanshukla@gmail.com
     </p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2026 Age Calculator | All Rights Reserved</p>
+    <p>© 2026 CalculatorHub | All Rights Reserved</p>
   </footer>
 
   <script>
+    function formatNumber(num){
+      return Number(num).toLocaleString("en-IN", {maximumFractionDigits: 2});
+    }
+
     function calculateAge() {
-
       let dob = document.getElementById("dob").value;
-
       if(dob === ""){
         alert("Please select your Date of Birth");
         return;
@@ -233,12 +389,7 @@
 
       if(days < 0){
         months--;
-        let prevMonth = new Date(
-          today.getFullYear(),
-          today.getMonth(),
-          0
-        ).getDate();
-
+        let prevMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
         days += prevMonth;
       }
 
@@ -247,14 +398,237 @@
         months += 12;
       }
 
-      document.getElementById("result").innerHTML =
-        `
+      document.getElementById("result").innerHTML = `
         🎂 Years: ${years} <br>
         📅 Months: ${months} <br>
         🗓 Days: ${days}
-        `;
+      `;
     }
-  </script>
 
-</body>
-</html>
+    function calculatePercentage(){
+      let value = parseFloat(document.getElementById("percentValue").value);
+      let total = parseFloat(document.getElementById("percentTotal").value);
+
+      if(!value || !total){
+        document.getElementById("percentageResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let percentage = (value / total) * 100;
+      document.getElementById("percentageResult").innerHTML = `Percentage: ${percentage.toFixed(2)}%`;
+    }
+
+    function calculateEMI(){
+      let P = parseFloat(document.getElementById("loanAmount").value);
+      let annualRate = parseFloat(document.getElementById("loanRate").value);
+      let years = parseFloat(document.getElementById("loanTenure").value);
+
+      if(!P || !annualRate || !years){
+        document.getElementById("emiResult").innerHTML = "Please enter valid loan details";
+        return;
+      }
+
+      let r = annualRate / 12 / 100;
+      let n = years * 12;
+      let emi = (P * r * Math.pow(1+r, n)) / (Math.pow(1+r, n)-1);
+
+      document.getElementById("emiResult").innerHTML = `
+        Monthly EMI: ₹${formatNumber(emi)} <br>
+        Total Payment: ₹${formatNumber(emi * n)}
+      `;
+    }
+
+    function calculateGST(){
+      let amount = parseFloat(document.getElementById("gstAmount").value);
+      let rate = parseFloat(document.getElementById("gstRate").value);
+
+      if(!amount || !rate){
+        document.getElementById("gstResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let gst = amount * rate / 100;
+      let total = amount + gst;
+
+      document.getElementById("gstResult").innerHTML = `
+        GST Amount: ₹${formatNumber(gst)} <br>
+        Total Amount: ₹${formatNumber(total)}
+      `;
+    }
+
+    function calculateSIP(){
+      let monthly = parseFloat(document.getElementById("sipMonthly").value);
+      let annualRate = parseFloat(document.getElementById("sipRate").value);
+      let years = parseFloat(document.getElementById("sipYears").value);
+
+      if(!monthly || !annualRate || !years){
+        document.getElementById("sipResult").innerHTML = "Please enter valid SIP details";
+        return;
+      }
+
+      let r = annualRate / 12 / 100;
+      let n = years * 12;
+      let maturity = monthly * (((Math.pow(1+r, n) - 1) / r) * (1+r));
+      let invested = monthly * n;
+
+      document.getElementById("sipResult").innerHTML = `
+        Total Invested: ₹${formatNumber(invested)} <br>
+        Estimated Value: ₹${formatNumber(maturity)}
+      `;
+    }
+
+    function calculateDiscount(){
+      let original = parseFloat(document.getElementById("originalPrice").value);
+      let discount = parseFloat(document.getElementById("discountPercent").value);
+
+      if(!original || discount < 0){
+        document.getElementById("discountResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let save = original * discount / 100;
+      let finalPrice = original - save;
+
+      document.getElementById("discountResult").innerHTML = `
+        Discount Amount: ₹${formatNumber(save)} <br>
+        Final Price: ₹${formatNumber(finalPrice)}
+      `;
+    }
+
+    function calculateBMI(){
+      let weight = parseFloat(document.getElementById("weight").value);
+      let height = parseFloat(document.getElementById("height").value) / 100;
+
+      if(!weight || !height){
+        document.getElementById("bmiResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let bmi = weight / (height * height);
+      let category = "Underweight";
+      if(bmi >= 25) category = "Overweight";
+      else if(bmi >= 18.5) category = "Normal";
+
+      document.getElementById("bmiResult").innerHTML = `
+        BMI: ${bmi.toFixed(2)} <br>
+        Category: ${category}
+      `;
+    }
+
+    function calculateLoan(){
+      let P = parseFloat(document.getElementById("loanCalcAmount").value);
+      let rate = parseFloat(document.getElementById("loanCalcRate").value);
+      let years = parseFloat(document.getElementById("loanCalcYears").value);
+
+      if(!P || !rate || !years){
+        document.getElementById("loanResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let r = rate / 12 / 100;
+      let n = years * 12;
+      let emi = (P * r * Math.pow(1+r, n)) / (Math.pow(1+r, n)-1);
+
+      document.getElementById("loanResult").innerHTML = `
+        Monthly Payment: ₹${formatNumber(emi)} <br>
+        Total Repayment: ₹${formatNumber(emi*n)}
+      `;
+    }
+
+    function calculateFD(){
+      let principal = parseFloat(document.getElementById("fdAmount").value);
+      let rate = parseFloat(document.getElementById("fdRate").value);
+      let years = parseFloat(document.getElementById("fdYears").value);
+
+      if(!principal || !rate || !years){
+        document.getElementById("fdResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let maturity = principal * Math.pow((1 + rate/100), years);
+
+      document.getElementById("fdResult").innerHTML = `
+        Maturity Amount: ₹${formatNumber(maturity)} <br>
+        Interest Earned: ₹${formatNumber(maturity - principal)}
+      `;
+    }
+
+    function calculateSI(){
+      let p = parseFloat(document.getElementById("siPrincipal").value);
+      let r = parseFloat(document.getElementById("siRate").value);
+      let t = parseFloat(document.getElementById("siTime").value);
+
+      if(!p || !r || !t){
+        document.getElementById("siResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let si = (p * r * t) / 100;
+      document.getElementById("siResult").innerHTML = `
+        Simple Interest: ₹${formatNumber(si)} <br>
+        Total Amount: ₹${formatNumber(p + si)}
+      `;
+    }
+
+    function calculateCI(){
+      let p = parseFloat(document.getElementById("ciPrincipal").value);
+      let r = parseFloat(document.getElementById("ciRate").value);
+      let t = parseFloat(document.getElementById("ciTime").value);
+
+      if(!p || !r || !t){
+        document.getElementById("ciResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let amount = p * Math.pow((1 + r/100), t);
+      let ci = amount - p;
+
+      document.getElementById("ciResult").innerHTML = `
+        Compound Interest: ₹${formatNumber(ci)} <br>
+        Total Amount: ₹${formatNumber(amount)}
+      `;
+    }
+
+    function calculateDateDiff(){
+      let start = document.getElementById("startDate").value;
+      let end = document.getElementById("endDate").value;
+
+      if(!start || !end){
+        document.getElementById("dateDiffResult").innerHTML = "Please select both dates";
+        return;
+      }
+
+      let d1 = new Date(start);
+      let d2 = new Date(end);
+      let diff = d2 - d1;
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      document.getElementById("dateDiffResult").innerHTML = `Difference: ${days} day(s)`;
+    }
+
+    function calculateTime(){
+      let hours = parseFloat(document.getElementById("timeHours").value) || 0;
+      let minutes = parseFloat(document.getElementById("timeMinutes").value) || 0;
+      let total = (hours * 60) + minutes;
+
+      document.getElementById("timeResult").innerHTML = `
+        Total Minutes: ${total} <br>
+        Total Hours: ${(total/60).toFixed(2)}
+      `;
+    }
+
+    function calculateSalaryHike(){
+      let salary = parseFloat(document.getElementById("currentSalary").value);
+      let hike = parseFloat(document.getElementById("hikePercent").value);
+
+      if(!salary || !hike){
+        document.getElementById("salaryResult").innerHTML = "Please enter valid values";
+        return;
+      }
+
+      let increase = salary * hike / 100;
+      let newSalary = salary + increase;
+
+      document.getElementById("salaryResult").innerHTML = `
+        Increase: ₹${formatNumber(increase)} <br>
+        Ne
