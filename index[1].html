@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CalculatorHub – Free Online Calculators</title>
+  <meta name="description" content="Free online calculators for percentage, EMI, GST, SIP, discount, BMI, loan, FD, simple interest, compound interest, date difference, time, salary hike and profit margin." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">CalculatorHub</div>
+      <div class="nav-links">
+        <a href="#percentage">Percentage</a>
+        <a href="#emi">EMI</a>
+        <a href="#gst">GST</a>
+        <a href="#sip">SIP</a>
+        <a href="#discount">Discount</a>
+        <a href="#bmi">BMI</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Free Online Calculators</h1>
+      <p>
+        Same dark theme + clean card style me 14 calculators ready hain. Isse tu GitHub Pages pe direct host kar sakta hai.
+        Baad me main isko SEO pages me split karne ka next version bhi bana dunga.
+      </p>
+    </div>
+  </section>
+
+  <div class="container layout">
+    <aside class="sidebar">
+      <h3>All Calculators</h3>
+      <a href="#percentage">Percentage Calculator</a>
+      <a href="#emi">EMI Calculator</a>
+      <a href="#gst">GST Calculator</a>
+      <a href="#sip">SIP Calculator</a>
+      <a href="#discount">Discount Calculator</a>
+      <a href="#bmi">BMI Calculator</a>
+      <a href="#loan">Loan Calculator</a>
+      <a href="#fd">FD Calculator</a>
+      <a href="#simple-interest">Simple Interest</a>
+      <a href="#compound-interest">Compound Interest</a>
+      <a href="#date-diff">Date Difference</a>
+      <a href="#time">Time Calculator</a>
+      <a href="#salary">Salary Hike</a>
+      <a href="#profit">Profit Margin</a>
+    </aside>
+
+    <main class="main-grid">
+      <section class="card" id="percentage">
+        <h2>Percentage Calculator</h2>
+        <div class="field"><label>Value</label><input id="pctValue" type="number" placeholder="e.g. 45"></div>
+        <div class="field"><label>Total</label><input id="pctTotal" type="number" placeholder="e.g. 60"></div>
+        <div class="btns"><button class="btn-primary" onclick="calcPercentage()">Calculate</button><button class="btn-secondary" onclick="resetCard('percentage')">Reset</button></div>
+        <div class="result" id="pctResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="emi">
+        <h2>EMI Calculator</h2>
+        <div class="field"><label>Loan Amount (₹)</label><input id="emiPrincipal" type="number" placeholder="500000"></div>
+        <div class="row">
+          <div class="field"><label>Interest Rate (%)</label><input id="emiRate" type="number" placeholder="9"></div>
+          <div class="field"><label>Tenure (Years)</label><input id="emiYears" type="number" placeholder="5"></div>
+        </div>
+        <div class="btns"><button class="btn-primary" onclick="calcEMI()">Calculate EMI</button><button class="btn-secondary" onclick="resetCard('emi')">Reset</button></div>
+        <div class="result" id="emiResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="gst">
+        <h2>GST Calculator</h2>
+        <div class="field"><label>Base Amount (₹)</label><input id="gstAmount" type="number" placeholder="1000"></div>
+        <div class="field"><label>GST Rate (%)</label><input id="gstRate" type="number" placeholder="18"></div>
+        <div class="btns"><button class="btn-primary" onclick="calcGST()">Calculate GST</button><button class="btn-secondary" onclick="resetCard('gst')">Reset</button></div>
+        <div class="result" id="gstResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="sip">
+        <h2>SIP Calculator</h2>
+        <div class="field"><label>Monthly Investment (₹)</label><input id="sipMonthly" type="number" placeholder="5000"></div>
+        <div class="row">
+          <div class="field"><label>Expected Return (%)</label><input id="sipRate" type="number" placeholder="12"></div>
+          <div class="field"><label>Duration (Years)</label><input id="sipYears" type="number" placeholder="10"></div>
+        </div>
+        <div class="btns"><button class="btn-primary" onclick="calcSIP()">Calculate SIP</button><button class="btn-secondary" onclick="resetCard('sip')">Reset</button></div>
+        <div class="result" id="sipResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="discount">
+        <h2>Discount Calculator</h2>
+        <div class="field"><label>Original Price (₹)</label><input id="discOriginal" type="number" placeholder="1999"></div>
+        <div class="field"><label>Discount (%)</label><input id="discPercent" type="number" placeholder="25"></div>
+        <div class="btns"><button class="btn-primary" onclick="calcDiscount()">Calculate Discount</button><button class="btn-secondary" onclick="resetCard('discount')">Reset</button></div>
+        <div class="result" id="discResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="bmi">
+        <h2>BMI Calculator</h2>
+        <div class="field"><label>Weight (kg)</label><input id="bmiWeight" type="number" placeholder="65"></div>
+        <div class="field"><label>Height (cm)</label><input id="bmiHeight" type="number" placeholder="170"></div>
+        <div class="btns"><button class="btn-primary" onclick="calcBMI()">Calculate BMI</button><button class="btn-secondary" onclick="resetCard('bmi')">Reset</button></div>
+        <div class="result" id="bmiResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="loan">
+        <h2>Loan Calculator</h2>
+        <div class="field"><label>Loan Amount (₹)</label><input id="loanAmount" type="number" placeholder="300000"></div>
+        <div class="row">
+          <div class="field"><label>Interest Rate (%)</label><input id="loanRate" type="number" placeholder="11"></div>
+          <div class="field"><label>Tenure (Years)</label><input id="loanYears" type="number" placeholder="3"></div>
+        </div>
+        <div class="btns"><button class="btn-primary" onclick="calcLoan()">Calculate Loan</button><button class="btn-secondary" onclick="resetCard('loan')">Reset</button></div>
+        <div class="result" id="loanResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="fd">
+        <h2>FD Calculator</h2>
+        <div class="field"><label>Principal (₹)</label><input id="fdPrincipal" type="number" placeholder="100000"></div>
+        <div class="row">
+          <div class="field"><label>Interest Rate (%)</label><input id="fdRate" type="number" placeholder="7"></div>
+          <div class="field"><label>Duration (Years)</label><input id="fdYears" type="number" placeholder="5"></div>
+        </div>
+        <div class="btns"><button class="btn-primary" onclick="calcFD()">Calculate FD</button><button class="btn-secondary" onclick="resetCard('fd')">Reset</button></div>
+        <div class="result" id="fdResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="simple-interest">
+        <h2>Simple Interest Calculator</h2>
+        <div class="field"><label>Principal (₹)</label><input id="siPrincipal" type="number" placeholder="50000"></div>
+        <div class="row">
+          <div class="field"><label>Rate (%)</label><input id="siRate" type="number" placeholder="10"></div>
+          <div class="field"><label>Time (Years)</label><input id="siYears" type="number" placeholder="2"></div>
+        </div>
+        <div class="btns"><button class="btn-primary" onclick="calcSI()">Calculate</button><button class="btn-secondary" onclick="resetCard('simple-interest')">Reset</button></div>
+        <div class="result" id="siResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="compound-interest">
+        <h2>Compound Interest Calculator</h2>
+        <div class="field"><label>Principal (₹)</label><input id="ciPrincipal" type="number" placeholder="50000"></div>
+        <div class="row">
+          <div class="field"><label>Rate (%)</label><input id="ciRate" type="number" placeholder="12"></div>
+          <div class="field"><label>Time (Years)</label><input id="ciYears" type="number" placeholder="4"></div>
+        </div>
+        <div class="btns"><button class="btn-primary" onclick="calcCI()">Calculate</button><button class="btn-secondary" onclick="resetCard('compound-interest')">Reset</button></div>
+        <div class="result" id="ciResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="date-diff">
+        <h2>Date Difference Calculator</h2>
+        <div class="field"><label>Start Date</label><input id="dateStart" type="date"></div>
+        <div class="field"><label>End Date</label><input id="dateEnd" type="date"></div>
+        <div class="btns"><button class="btn-primary" onclick="calcDateDiff()">Calculate</button><button class="btn-secondary" onclick="resetCard('date-diff')">Reset</button></div>
+        <div class="result" id="dateResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="time">
+        <h2>Time Calculator</h2>
+        <div class="row">
+          <div class="field"><label>Start Hours</label><input id="timeH1" type="number" placeholder="9"></div>
+          <div class="field"><label>Start Minutes</label><input id="timeM1" type="number" placeholder="30"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>End Hours</label><input id="timeH2" type="number" placeholder="17"></div>
+          <div class="field"><label>End Minutes</label><input id="timeM2" type="number" placeholder="15"></div>
+        </div>
+        <div class="btns"><button class="btn-primary" onclick="calcTime()">Calculate</button><button class="btn-secondary" onclick="resetCard('time')">Reset</button></div>
+        <div class="result" id="timeResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="salary">
+        <h2>Salary Hike Calculator</h2>
+        <div class="field"><label>Current Salary (₹)</label><input id="salCurrent" type="number" placeholder="40000"></div>
+        <div class="field"><label>Hike (%)</label><input id="salHike" type="number" placeholder="12"></div>
+        <div class="btns"><button class="btn-primary" onclick="calcSalary()">Calculate</button><button class="btn-secondary" onclick="resetCard('salary')">Reset</button></div>
+        <div class="result" id="salResult">Enter values and click calculate.</div>
+      </section>
+
+      <section class="card" id="profit">
+        <h2>Profit Margin Calculator</h2>
+        <div class="field"><label>Cost Price (₹)</label><input id="pmCost" type="number" placeholder="800"></div>
+        <div class="field"><label>Selling Price (₹)</label><input id="pmSell" type="number" placeholder="1200"></div>
+        <div class="btns"><button class="btn-primary" onclick="calcMargin()">Calculate</button><button class="btn-secondary" onclick="resetCard('profit')">Reset</button></div>
+        <div class="result" id="pmResult">Enter values and click calculate.</div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">CalculatorHub starter pack • Built for GitHub Pages</div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>
