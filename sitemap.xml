@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://whoamanshukla.github.io/Calculatorhub/</loc>
-    <lastmod>2025-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-06-24</lastmod>
   </url>
+
+  <url>
+    <loc>https://whoamanshukla.github.io/Calculatorhub/age-calculator.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://whoamanshukla.github.io/Calculatorhub/bmi-calculator.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://whoamanshukla.github.io/Calculatorhub/emi-calculator.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://whoamanshukla.github.io/Calculatorhub/percentage-calculator.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+
 </urlset>
