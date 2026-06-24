@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- KEEP YOUR EXISTING GOOGLE VERIFICATION META TAG HERE -->
+  <!-- Example:
+  <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+  -->
 
   <title>Age Calculator - Calculate Your Exact Age in Years, Months & Days</title>
   <meta name="description" content="Free online Age Calculator to calculate exact age in years, months and days from date of birth. Also check next birthday countdown, total months lived, zodiac sign and day of birth." />
@@ -78,6 +82,7 @@
   }
   </script>
 
+</head>
 <body>
   <header class="site-header">
     <div class="container nav">
@@ -146,6 +151,12 @@
                 <input type="date" id="dob" required />
               </div>
 
+              <div class="field">
+                <label for="calcDate">Age As Of Date</label>
+                <input type="date" id="calcDate" />
+                <small>If left blank, today’s date will be used.</small>
+              </div>
+
               <div class="button-group">
                 <button type="submit" class="btn btn-primary">Calculate Age</button>
                 <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
@@ -197,6 +208,12 @@
               <h3 id="totalHours">--</h3>
             </div>
           </div>
+        </div>
+
+        <!-- Ad slot area placeholder -->
+        <div class="ad-box">
+          <p>Advertisement Space</p>
+          <span>You can place an AdSense ad unit here after approval.</span>
         </div>
       </div>
     </section>
@@ -468,4 +485,4 @@
 
   <script src="script.js"></script>
 </body>
-                </html>
+</html>
