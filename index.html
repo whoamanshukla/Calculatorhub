@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Age Calculator</title>
+  <meta name="description" content="Free online age calculator to calculate exact age in years, months and days from date of birth.">
+  <meta name="keywords" content="age calculator, calculate age, date of birth calculator, exact age calculator">
+  <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/">
+  <meta name="robots" content="index, follow">
 
   <style>
     *{
@@ -22,7 +22,6 @@
       color:white;
     }
 
-    /* Navbar */
     nav{
       width:100%;
       background:#111827;
@@ -56,7 +55,6 @@
       color:#38bdf8;
     }
 
-    /* Hero Section */
     .hero{
       min-height:90vh;
       display:flex;
@@ -117,7 +115,6 @@
       font-weight:bold;
     }
 
-    /* About Section */
     .about, .contact{
       padding:60px 50px;
       text-align:center;
@@ -160,10 +157,8 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav>
     <h1>Age Calculator</h1>
-
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -171,52 +166,59 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
-
     <div class="calculator">
       <h2>Age Calculator</h2>
-
       <input type="date" id="dob">
-
-      <button onclick="calculateAge()">
-        Calculate Age
-      </button>
-
+      <button onclick="calculateAge()">Calculate Age</button>
       <div class="result" id="result">
         Enter your Date of Birth
       </div>
     </div>
-
   </section>
 
-  <!-- About -->
   <section class="about" id="about">
     <h2>About</h2>
-
     <p>
       This professional Age Calculator website helps users calculate their exact age in Years, Months, and Days instantly. 
       Simply enter your Date of Birth and get accurate results in one click.
     </p>
   </section>
 
-  <!-- Contact -->
+  <section class="about">
+    <h2>How to Use This Age Calculator</h2>
+    <p>
+      Enter your date of birth in the age calculator and click the calculate button.
+      This tool instantly shows your exact age in years, months, and days.
+      You can use this online age calculator to calculate age from date of birth easily.
+    </p>
+  </section>
+
   <section class="contact" id="contact">
     <h2>Contact</h2>
-
     <p>
       Email: loveamanshukla@gmail.com <br><br>
     </p>
   </section>
 
-  <!-- Footer -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Age Calculator",
+    "url": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "description": "Free online age calculator to calculate exact age in years, months and days from date of birth."
+  }
+  </script>
+
   <footer>
     <p>© 2026 Age Calculator | All Rights Reserved</p>
   </footer>
 
   <script>
     function calculateAge() {
-
       let dob = document.getElementById("dob").value;
 
       if(dob === ""){
