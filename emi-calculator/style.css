@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #222;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #111827;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.calculator-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.result-box {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.result-box h2 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.result-box p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.content-section {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.content-section h2 {
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.content-section h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.formula {
+  background: #f3f4f6;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 10px 0;
+  overflow-x: auto;
+}
+
+ol, ul {
+  padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 14px;
+  }
+
+  .calculator-box,
+  .content-section {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
