@@ -5,104 +5,484 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>EMI Calculator - Calculate Loan EMI Online | CalculatorHub</title>
-  <meta name="description" content="Use this free EMI Calculator to calculate monthly loan EMI, total interest and total payment instantly. Simple and mobile-friendly EMI calculator." />
+  <meta name="description" content="Free online EMI Calculator to calculate monthly loan EMI, total interest and total payment instantly. Use this calculator for home loans, car loans, personal loans and more." />
+  <meta name="keywords" content="emi calculator, loan emi calculator, monthly emi calculator, home loan emi calculator, personal loan emi calculator, car loan emi calculator" />
+  <meta name="author" content="CalculatorHub" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
 
+  <link rel="canonical" href="https://whoamanshukla.github.io/Calculatorhub/emi-calculator/" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EMI Calculator - Calculate Loan EMI Online" />
+  <meta property="og:description" content="Calculate monthly EMI, total interest and total repayment amount instantly using this free EMI Calculator." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://whoamanshukla.github.io/Calculatorhub/emi-calculator/" />
+
+  <!-- FAQ Schema + WebPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "name":"CalculatorHub",
+        "url":"https://whoamanshukla.github.io/Calculatorhub/"
+      },
+      {
+        "@type":"WebPage",
+        "name":"EMI Calculator",
+        "url":"https://whoamanshukla.github.io/Calculatorhub/emi-calculator/",
+        "description":"Free online EMI calculator to calculate monthly loan EMI, total interest and total payment."
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"What is EMI?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"EMI stands for Equated Monthly Installment. It is the fixed monthly amount paid towards repaying a loan over a selected tenure."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"How do I calculate EMI?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Enter the loan amount, annual interest rate and loan tenure. The calculator uses the standard EMI formula to calculate your monthly installment, total interest and total payment."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Can I use this EMI calculator for home loans and car loans?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Yes. This EMI calculator can be used for home loans, personal loans, car loans and other standard loans."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Is this EMI calculator free to use?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Yes, this EMI calculator is completely free to use and works on mobile, tablet and desktop devices."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>EMI Calculator</h1>
-    <p class="subtitle">
-      Calculate your monthly loan EMI, total interest and total payment instantly.
-    </p>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="../index.html" class="logo">Calculator<span>Hub</span></a>
 
-    <div class="calculator-box">
-      <div class="input-group">
-        <label for="loanAmount">Loan Amount (₹)</label>
-        <input type="number" id="loanAmount" placeholder="e.g. 500000" />
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#how-to-use">How to Use</a>
+        <a href="#faq">FAQ</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Free Online Tool</p>
+          <h1>EMI Calculator</h1>
+          <p class="hero-subtitle">
+            Calculate your monthly <strong>loan EMI</strong>, <strong>total interest payable</strong>,
+            and <strong>total repayment amount</strong> instantly. Useful for
+            <strong>home loans</strong>, <strong>personal loans</strong>, <strong>car loans</strong>, and more.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#calculator" class="btn btn-primary">Calculate EMI Now</a>
+            <a href="#about-tool" class="btn btn-secondary">Learn More</a>
+          </div>
+
+          <div class="hero-points">
+            <span>✓ Free to use</span>
+            <span>✓ Instant results</span>
+            <span>✓ Mobile friendly</span>
+            <span>✓ No sign-up required</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Quick EMI Calculator</h2>
+          <p>Enter loan details and get instant EMI results.</p>
+          <a href="#calculator" class="btn btn-primary full-btn">Open Calculator</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Calculate Your EMI</h2>
+          <p>Use the form below to calculate your monthly EMI instantly.</p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <div class="calculator-card">
+            <form id="emiForm" class="age-form">
+              <div class="field">
+                <label for="loanAmount">Loan Amount (₹)</label>
+                <input type="number" id="loanAmount" placeholder="e.g. 500000" required />
+              </div>
+
+              <div class="field">
+                <label for="interestRate">Annual Interest Rate (%)</label>
+                <input type="number" id="interestRate" placeholder="e.g. 10" step="0.01" required />
+                <small>Enter the yearly interest rate charged by the lender.</small>
+              </div>
+
+              <div class="field">
+                <label for="loanTenure">Loan Tenure (Years)</label>
+                <input type="number" id="loanTenure" placeholder="e.g. 5" step="0.1" required />
+              </div>
+
+              <div class="button-group">
+                <button type="submit" class="btn btn-primary">Calculate EMI</button>
+                <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+              </div>
+            </form>
+
+            <div id="errorMessage" class="error-message" aria-live="polite"></div>
+          </div>
+
+          <div class="results-grid" id="resultsSection">
+            <div class="result-card highlight">
+              <p class="result-label">Monthly EMI</p>
+              <h3 id="monthlyEmi">--</h3>
+              <p class="result-note">Your fixed monthly installment</p>
+            </div>
+
+            <div class="result-card">
+              <p class="result-label">Total Interest Payable</p>
+              <h3 id="totalInterest">--</h3>
+            </div>
+
+            <div class="result-card">
+              <p class="result-label">Total Payment</p>
+              <h3 id="totalPayment">--</h3>
+            </div>
+
+            <div class="result-card">
+              <p class="result-label">Principal Amount</p>
+              <h3 id="principalAmount">--</h3>
+            </div>
+
+            <div class="result-card">
+              <p class="result-label">Monthly Interest Rate</p>
+              <h3 id="monthlyRate">--</h3>
+            </div>
+
+            <div class="result-card">
+              <p class="result-label">Loan Tenure in Months</p>
+              <h3 id="tenureMonths">--</h3>
+            </div>
+
+            <div class="result-card">
+              <p class="result-label">Interest to Principal Ratio</p>
+              <h3 id="interestRatio">--</h3>
+            </div>
+
+            <div class="result-card">
+              <p class="result-label">Total Cost Multiplier</p>
+              <h3 id="costMultiplier">--</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT TOOL -->
+    <section class="section alt-bg" id="about-tool">
+      <div class="container content-grid">
+        <div>
+          <h2>About This EMI Calculator</h2>
+          <p>
+            This free online EMI Calculator helps you calculate your monthly loan EMI
+            based on the <strong>loan amount</strong>, <strong>interest rate</strong>,
+            and <strong>loan tenure</strong>. It is useful for estimating repayments
+            for <strong>home loans</strong>, <strong>car loans</strong>,
+            <strong>personal loans</strong>, and similar loan products.
+          </p>
+          <p>
+            Instead of manually calculating installments, this tool instantly shows your
+            <strong>monthly EMI</strong>, <strong>total interest payable</strong>,
+            and <strong>total repayment amount</strong>. This makes it easier to compare
+            loan options and plan your monthly budget before taking a loan.
+          </p>
+          <p>
+            The EMI calculation is based on the standard mathematical formula used by lenders.
+            You simply enter the principal amount, annual interest rate, and loan tenure in years,
+            and the calculator generates the result instantly in your browser.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>What you get from this tool</h3>
+          <ul class="feature-list">
+            <li>Monthly EMI amount</li>
+            <li>Total interest payable</li>
+            <li>Total repayment amount</li>
+            <li>Loan tenure in months</li>
+            <li>Monthly interest rate breakdown</li>
+            <li>Works on desktop and mobile</li>
+            <li>Free, fast and easy to use</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO USE -->
+    <section class="section" id="how-to-use">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How to Use the EMI Calculator</h2>
+          <p>Follow these simple steps to calculate EMI online.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">1</span>
+            <h3>Enter Loan Amount</h3>
+            <p>Type the total amount you want to borrow from the lender.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">2</span>
+            <h3>Enter Interest Rate</h3>
+            <p>Enter the annual rate of interest offered by the bank or lender.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">3</span>
+            <h3>Enter Loan Tenure</h3>
+            <p>Provide the repayment duration in years.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">4</span>
+            <h3>View EMI Results</h3>
+            <p>Click Calculate EMI to see monthly EMI, total interest and total payment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW EMI IS CALCULATED -->
+    <section class="section alt-bg">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How EMI Is Calculated</h2>
+          <p>A simple explanation of the EMI formula used by the calculator.</p>
+        </div>
+
+        <div class="text-block">
+          <p>
+            EMI stands for <strong>Equated Monthly Installment</strong>. It is the fixed amount
+            you pay every month to repay your loan over the selected tenure. Each EMI usually includes
+            both a portion of the <strong>principal amount</strong> and the <strong>interest amount</strong>.
+          </p>
+          <p>
+            The EMI is calculated using a standard formula that considers the
+            <strong>loan amount (principal)</strong>, the <strong>monthly interest rate</strong>,
+            and the <strong>total number of monthly installments</strong>.
+          </p>
+          <p>
+            Formula:
+          </p>
+          <p>
+            <strong>EMI = [P × R × (1 + R)<sup>N</sup>] / [(1 + R)<sup>N</sup> - 1]</strong>
+          </p>
+          <p>
+            Where:
+          </p>
+          <ul>
+            <li><strong>P</strong> = Loan amount</li>
+            <li><strong>R</strong> = Monthly interest rate</li>
+            <li><strong>N</strong> = Number of monthly installments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY USE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why Use This Online EMI Calculator?</h2>
+          <p>Useful for loan planning, budgeting and comparing repayment options.</p>
+        </div>
+
+        <div class="cards-3">
+          <div class="mini-card">
+            <h3>Quick and Accurate</h3>
+            <p>Calculate your monthly EMI instantly without doing manual loan calculations.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Better Financial Planning</h3>
+            <p>Know your monthly repayment burden before applying for a loan.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Compare Loan Options</h3>
+            <p>Try different loan amounts, rates and tenures to compare EMI outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section alt-bg" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Frequently Asked Questions</h2>
+          <p>Common questions about this EMI calculator.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is EMI?</summary>
+            <p>
+              EMI stands for Equated Monthly Installment. It is the fixed monthly amount
+              you pay to repay a loan over a chosen period.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I calculate EMI for a loan?</summary>
+            <p>
+              Enter your loan amount, annual interest rate and loan tenure in years.
+              Then click the Calculate EMI button to get the result instantly.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I use this EMI calculator for home loans?</summary>
+            <p>
+              Yes. You can use it for home loans, car loans, personal loans and other common loans.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does a longer loan tenure reduce EMI?</summary>
+            <p>
+              Yes, a longer tenure generally reduces the monthly EMI, but it can increase the total interest paid.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is this EMI calculator free to use?</summary>
+            <p>
+              Yes, it is completely free to use and does not require sign-up.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I use this tool on mobile?</summary>
+            <p>
+              Yes. The calculator is responsive and works on phones, tablets, laptops and desktops.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Why is EMI important before taking a loan?</summary>
+            <p>
+              EMI helps you understand how much you will need to pay every month, which makes budgeting and loan planning easier.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does this calculator include processing fees or charges?</summary>
+            <p>
+              No. This calculator estimates EMI based on loan amount, interest rate and tenure only.
+              Additional lender charges or fees are not included.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="section">
+      <div class="container contact-cta">
+        <div>
+          <h2>Need Help or Want to Report an Issue?</h2>
+          <p>
+            If you find any issue in the calculator or want to suggest improvements,
+            feel free to contact us.
+          </p>
+        </div>
+        <a href="../contact.html" class="btn btn-primary">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="section alt-bg">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Important Disclaimer</h2>
+        </div>
+        <div class="text-block">
+          <p>
+            This EMI Calculator is provided for general informational and educational purposes only.
+            While we try to provide accurate calculations, results should not be treated as legal,
+            financial, tax, investment, or official advice. Always verify important financial decisions
+            with your lender or a qualified financial professional.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>CalculatorHub</h3>
+        <p>
+          Free online calculators and tools designed to be simple, fast and useful.
+        </p>
       </div>
 
-      <div class="input-group">
-        <label for="interestRate">Annual Interest Rate (%)</label>
-        <input type="number" id="interestRate" placeholder="e.g. 10" step="0.01" />
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#calculator">EMI Calculator</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
       </div>
 
-      <div class="input-group">
-        <label for="loanTenure">Loan Tenure (Years)</label>
-        <input type="number" id="loanTenure" placeholder="e.g. 5" />
-      </div>
-
-      <button id="calculateBtn">Calculate EMI</button>
-
-      <div class="result-box" id="resultBox">
-        <h2>Results</h2>
-        <p><strong>Monthly EMI:</strong> <span id="monthlyEmi">--</span></p>
-        <p><strong>Total Interest:</strong> <span id="totalInterest">--</span></p>
-        <p><strong>Total Payment:</strong> <span id="totalPayment">--</span></p>
+      <div>
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../disclaimer.html">Disclaimer</a></li>
+          <li><a href="../terms.html">Terms & Conditions</a></li>
+        </ul>
       </div>
     </div>
 
-    <section class="content-section">
-      <h2>About This EMI Calculator</h2>
-      <p>
-        This EMI Calculator helps you estimate your Equated Monthly Installment (EMI)
-        for loans such as home loans, personal loans, car loans and more. Just enter
-        the loan amount, annual interest rate and loan tenure to get instant results.
-      </p>
-    </section>
-
-    <section class="content-section">
-      <h2>How to Use the EMI Calculator</h2>
-      <ol>
-        <li>Enter your total loan amount.</li>
-        <li>Enter the annual interest rate.</li>
-        <li>Enter the loan tenure in years.</li>
-        <li>Click on the <strong>Calculate EMI</strong> button.</li>
-        <li>View your monthly EMI, total interest and total repayment amount.</li>
-      </ol>
-    </section>
-
-    <section class="content-section">
-      <h2>EMI Formula</h2>
-      <p>
-        EMI is calculated using the standard formula:
-      </p>
-      <p class="formula">
-        EMI = [P × R × (1 + R)<sup>N</sup>] / [(1 + R)<sup>N</sup> - 1]
-      </p>
-      <p>
-        Where:
-      </p>
-      <ul>
-        <li><strong>P</strong> = Loan amount</li>
-        <li><strong>R</strong> = Monthly interest rate</li>
-        <li><strong>N</strong> = Number of monthly installments</li>
-      </ul>
-    </section>
-
-    <section class="content-section">
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>What is EMI?</h3>
-      <p>
-        EMI stands for Equated Monthly Installment. It is the fixed monthly amount
-        you pay to repay a loan over a specific period.
-      </p>
-
-      <h3>Can I use this EMI Calculator for home loans?</h3>
-      <p>
-        Yes, you can use it for home loans, car loans, personal loans and other
-        fixed-rate loans.
-      </p>
-
-      <h3>Does a longer loan tenure reduce EMI?</h3>
-      <p>
-        Yes, a longer tenure usually lowers the monthly EMI, but it may increase
-        the total interest paid over time.
-      </p>
-    </section>
-  </div>
+    <div class="container footer-bottom">
+      <p>© <span id="currentYear"></span> CalculatorHub. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
-</html>
+  </html>
