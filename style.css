@@ -1,4 +1,4 @@
-:root {
+hu:root {
   --bg: #f8fafc;
   --surface: #ffffff;
   --surface-2: #eef2ff;
@@ -633,27 +633,92 @@ a {
   }
 .tool-card {
   display: block;
-  transition: 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s ease;
+  text-decoration: none;
 }
 
-.tool-card:hover {
-  transform: translateY(-3px);
-  border-color: #bfdbfe;
-  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+.emi-tool-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 55%, #ffffff 100%);
+  border: 1px solid #c7d2fe;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.10);
+}
+
+.emi-tool-card::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.16), transparent 70%);
+  border-radius: 50%;
+}
+
+.emi-tool-card:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 18px 36px rgba(37, 99, 235, 0.16);
+}
+
+.tool-badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: #fff;
+}
+
+.tool-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.tool-icon {
+  min-width: 58px;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.22);
 }
 
 .tool-card h3 {
-  color: var(--primary);
+  color: #0f172a;
   margin-bottom: 8px;
+  font-size: 1.2rem;
 }
 
 .tool-card p {
   color: var(--muted);
-  margin-bottom: 14px;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.tool-card-bottom {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(37, 99, 235, 0.12);
 }
 
 .tool-link {
-  display: inline-block;
-  font-weight: 700;
-  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.tool-link:hover {
+  color: #1d4ed8;
 }
