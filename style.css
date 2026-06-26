@@ -631,3 +631,29 @@ a {
     padding: 56px 0;
   }
   }
+.tool-card {
+  display: block;
+  transition: 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+}
+
+.tool-card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.tool-card p {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.tool-link {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--primary);
+}
