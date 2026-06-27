@@ -631,3 +631,70 @@ a {
     padding: 56px 0;
   }
   }
+.featured-tool{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:35px;
+border-radius:20px;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:#fff;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.featured-left{
+max-width:70%;
+}
+
+.featured-badge{
+display:inline-block;
+background:#fff;
+color:#2563eb;
+padding:6px 14px;
+border-radius:50px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.featured-tool h2{
+font-size:32px;
+margin:10px 0;
+color:#fff;
+}
+
+.featured-tool p{
+color:#eef2ff;
+margin-bottom:20px;
+}
+
+.featured-btn{
+display:inline-block;
+background:#fff;
+color:#2563eb;
+padding:14px 24px;
+border-radius:12px;
+font-weight:700;
+transition:.3s;
+}
+
+.featured-btn:hover{
+transform:translateY(-3px);
+}
+
+.featured-right{
+font-size:90px;
+}
+
+@media(max-width:768px){
+.featured-tool{
+flex-direction:column;
+text-align:center;
+}
+.featured-left{
+max-width:100%;
+}
+.featured-right{
+margin-top:20px;
+font-size:70px;
+}
+}
